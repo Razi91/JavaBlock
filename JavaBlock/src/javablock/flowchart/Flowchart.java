@@ -31,7 +31,10 @@ import org.w3c.dom.*;
 import widgets.Resizer;
 
 
-
+/**
+ * Class for flowchart editor; GUI component
+ * @author razi
+ */
 public class Flowchart extends Sheet implements ActionListener, KeyListener,
         MouseListener, MouseWheelListener, MouseMotionListener,
             ComponentListener{
@@ -188,8 +191,8 @@ public class Flowchart extends Sheet implements ActionListener, KeyListener,
         }
     }
     
-    /**Stops Interpreter
-     * 
+    /**
+     * Stops Interpreter
      */
     public void close(){
         if(I.run != null)
@@ -205,6 +208,7 @@ public class Flowchart extends Sheet implements ActionListener, KeyListener,
         I.delete();
         close();
     }
+    
     @Override
     public void finalize(){
         try {
