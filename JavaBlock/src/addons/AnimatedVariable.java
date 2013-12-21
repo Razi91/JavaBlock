@@ -1,5 +1,9 @@
 package addons;
 
+/**
+ * Variable used to animations, set new value, duration and method of approximation
+ * @author razi
+ */
 public class AnimatedVariable{
     public AnimatedVariable(){
         timeStart=System.currentTimeMillis();
@@ -22,8 +26,7 @@ public class AnimatedVariable{
     public void setMethod(int method) {
         this.method = method;
     }
-    
-
+   
 
     public java.lang.Float get() {
         elapsed = ((double) System.currentTimeMillis() - timeStart) / timeAnim;

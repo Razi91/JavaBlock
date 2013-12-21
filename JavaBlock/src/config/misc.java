@@ -4,7 +4,6 @@ import java.awt.Frame;
 import java.awt.GraphicsEnvironment;
 import java.awt.Point;
 import java.awt.Rectangle;
-import java.beans.IntrospectionException;
 import java.io.*;
 import java.lang.reflect.Method;
 import java.net.URL;

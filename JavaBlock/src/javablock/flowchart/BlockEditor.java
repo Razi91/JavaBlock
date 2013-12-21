@@ -6,5 +6,4 @@ public interface BlockEditor {
     public boolean changes();
     public void saveBlock();
     public JBlock getBlock();
-
 }
