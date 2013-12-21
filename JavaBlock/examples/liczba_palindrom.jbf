@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaBlocks scriptEngine="python">
+    <option fullConnectorValues="true" grid="false" pascal="false"/>
+    <flowchart name="main">
+        <canvas interval="200" posX="-10.0" posY="-34.0" zoom="4"/>
+        <input/>
+        <preArgument/>
+        <blocks>
+            <block id="1" name="Start" returnType="0" type="START">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="255 255 0" posX="-8.375" posY="-282.0"/>
+                <content/>
+                <comment>main</comment>
+                <connect ID="5" value=""/>
+                <argument/>
+            </block>
+            <block id="2" type="RETURN">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="255 255 0" posX="-150.0" posY="233.0"/>
+                <content/>
+                <comment>End</comment>
+            </block>
+            <block id="3" type="IO">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="255 255 0" posX="-8.375" posY="-156.0"/>
+                <content>l=ReadNumber("Wprowadz liczbe: ");	;	</content>
+                <comment>l ;	Wprowadz liczbe: </comment>
+                <connect ID="4" value=""/>
+                <io array="0" inputType="0" ioType="2" message="Wprowadz liczbe: " variable="l"/>
+            </block>
+            <block id="4" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-8.375" posY="-99.0"/>
+                <content>var d=ceil(log10(l))</content>
+                <comment/>
+                <connect ID="6" value=""/>
+            </block>
+            <block id="5" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-8.375" posY="-213.0"/>
+                <content>var l=0;	var i=0</content>
+                <comment/>
+                <connect ID="3" value=""/>
+            </block>
+            <block id="6" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="217 248 255" posX="-8.375" posY="-32.666668"/>
+                <content>i&lt;ceil(d/2)</content>
+                <comment/>
+                <connect ID="8" value="false"/>
+                <connect ID="12" value="true"/>
+            </block>
+            <block id="7" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="217 248 255" posX="-8.375" posY="143.0"/>
+                <content>L%10==P%10</content>
+                <comment/>
+                <connect ID="10" value="true"/>
+                <connect ID="9" value="false"/>
+            </block>
+            <block id="8" type="IO">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="38 255 50" posX="-150.0" posY="-32.666668"/>
+                <content>Writeln("TAK");	;	</content>
+                <comment> "TAK" </comment>
+                <connect ID="2" value=""/>
+                <io ioType="1" message="TAK" messageSuffix="" newLine="true" variable=""/>
+            </block>
+            <block id="9" type="IO">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="255 0 255" posX="-8.375" posY="233.0"/>
+                <content>Writeln("NIE");	;	</content>
+                <comment> "NIE" </comment>
+                <connect ID="2" value=""/>
+                <io ioType="1" message="NIE" messageSuffix="" newLine="true" variable=""/>
+            </block>
+            <block id="10" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="217 248 255" posX="124.5" posY="143.0"/>
+                <content>i++</content>
+                <comment/>
+                <connect ID="11" value=""/>
+            </block>
+            <block id="11" type="JUMP">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="217 248 255" posX="124.5" posY="-32.666668"/>
+                <content> </content>
+                <comment/>
+                <connect ID="6" value=""/>
+            </block>
+            <block id="12" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="217 248 255" posX="-8.375" posY="68.0"/>
+                <content>var L=floor(l/pow(10, i));	var P=floor(l/pow(10, d-i-1))</content>
+                <comment/>
+                <connect ID="7" value=""/>
+            </block>
+        </blocks>
+        <groups/>
+    </flowchart>
+</JavaBlocks>

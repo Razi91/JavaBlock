@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaBlocks>
+    <option fullConnectorValues="true" grid="false" pascal="false"/>
+    <flowchart name="main">
+        <canvas interval="200" posX="0.0" posY="0.0" zoom="5"/>
+        <input/>
+        <preArgument/>
+        <blocks>
+            <block id="1" name="Start" returnType="0" type="START">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="255 255 0" posX="-4.2" posY="-173.0"/>
+                <content/>
+                <comment>main</comment>
+                <connect ID="3" value=""/>
+                <argument/>
+            </block>
+            <block id="2" type="RETURN">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="255 255 0" posX="-4.2" posY="29.0"/>
+                <content/>
+                <comment>Koniec</comment>
+            </block>
+            <block id="3" type="IO">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="255 255 0" posX="-4.2" posY="-121.0"/>
+                <content>f=ReadNumber("");	;	</content>
+                <comment>f ;	</comment>
+                <connect ID="4" value=""/>
+                <io array="0" inputType="0" ioType="2" message="" variable="f"/>
+            </block>
+            <block id="4" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-4.2" posY="-65.0"/>
+                <content>fi=fib(f)</content>
+                <comment/>
+                <connect ID="5" value=""/>
+            </block>
+            <block id="5" type="IO">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="255 255 0" posX="-4.2" posY="-18.0"/>
+                <content>Writeln("fib("+f+" )=" + (getValueOf(fi)));	;	</content>
+                <comment>"fib("+f+" )=" +fi</comment>
+                <connect ID="2" value=""/>
+                <io ioType="1" message="fib(&quot;+f+&quot; )=" messageSuffix="" newLine="true" variable="fi"/>
+            </block>
+        </blocks>
+        <groups/>
+    </flowchart>
+    <flowchart name="fib">
+        <canvas interval="200" posX="0.0" posY="0.0" zoom="4"/>
+        <input/>
+        <preArgument/>
+        <blocks>
+            <block id="1" name="fib" returnType="0" type="START">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="255 255 0" posX="-2.0" posY="-95.0"/>
+                <content/>
+                <comment>fib(n)</comment>
+                <connect ID="3" value=""/>
+                <argument>n</argument>
+            </block>
+            <block id="2" type="RETURN">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="255 255 0" posX="144.0" posY="-34.5"/>
+                <content>n</content>
+                <comment>return n</comment>
+                <extra/>
+            </block>
+            <block id="3" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-2.0" posY="-34.5"/>
+                <content>n&lt;=1</content>
+                <comment/>
+                <connect ID="2" value="true"/>
+                <connect ID="4" value="false"/>
+            </block>
+            <block id="4" type="RETURN">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="255 255 0" posX="-2.0" posY="47.0"/>
+                <content>fib(n-1) + fib(n-2)</content>
+                <comment>return fib(n-1) + fib(n-2)</comment>
+                <extra/>
+            </block>
+        </blocks>
+        <groups/>
+    </flowchart>
+</JavaBlocks>

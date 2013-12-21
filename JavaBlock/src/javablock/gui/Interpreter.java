@@ -255,8 +255,8 @@ public class Interpreter extends javax.swing.JPanel implements ComponentListener
             flow.update();
         }
         if(run != null){
-            run.actual=null;
-            run.reset();
+        run.actual=null;
+        run.reset();
         }
     }
 
@@ -275,14 +275,14 @@ public class Interpreter extends javax.swing.JPanel implements ComponentListener
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         exec = new javax.swing.JTextField();
-        panel = new javax.swing.JPanel();
-        embeddConsole = new javax.swing.JPanel();
         controll = new javax.swing.JToolBar();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        panel = new javax.swing.JPanel();
+        embeddConsole = new javax.swing.JPanel();
         consolePane = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         outScroll = new javax.swing.JScrollPane();
@@ -397,11 +397,7 @@ public class Interpreter extends javax.swing.JPanel implements ComponentListener
                     .addComponent(exec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        panel.setPreferredSize(new java.awt.Dimension(236, 359));
-
-        embeddConsole.setLayout(new java.awt.BorderLayout());
-
-        controll.setOrientation(1);
+        controll.setOrientation(javax.swing.SwingConstants.VERTICAL);
         controll.setRollover(true);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/media-playback-stop.png"))); // NOI18N
@@ -444,12 +440,14 @@ public class Interpreter extends javax.swing.JPanel implements ComponentListener
         });
         controll.add(jButton5);
 
-        embeddConsole.add(controll, java.awt.BorderLayout.WEST);
+        panel.setPreferredSize(new java.awt.Dimension(236, 359));
+
+        embeddConsole.setLayout(new java.awt.BorderLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
         Out.setColumns(20);
-        Out.setFont(new java.awt.Font("Monospaced", 0, 13));
+        Out.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
         Out.setRows(1);
         outScroll.setViewportView(Out);
 
@@ -473,16 +471,16 @@ public class Interpreter extends javax.swing.JPanel implements ComponentListener
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(outScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+            .addComponent(outScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(commandLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(command, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                .addComponent(command, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(exeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(ClearButton, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                .addComponent(ClearButton, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -519,16 +517,17 @@ public class Interpreter extends javax.swing.JPanel implements ComponentListener
         tracker.setLayout(trackerLayout);
         trackerLayout.setHorizontalGroup(
             trackerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ValuesPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
             .addGroup(trackerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(track, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
-            .addGroup(trackerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(search, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                .addContainerGap())
-            .addComponent(ValuesPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                .addGroup(trackerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(trackerLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(track, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE))
+                    .addGroup(trackerLayout.createSequentialGroup()
+                        .addComponent(search, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         trackerLayout.setVerticalGroup(
             trackerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -563,14 +562,13 @@ public class Interpreter extends javax.swing.JPanel implements ComponentListener
             .addGroup(inputPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(inputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
                     .addGroup(inputPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addContainerGap(62, Short.MAX_VALUE))
-                    .addGroup(inputPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addContainerGap(72, Short.MAX_VALUE))))
+                        .addGroup(inputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         inputPanelLayout.setVerticalGroup(
             inputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -601,13 +599,13 @@ public class Interpreter extends javax.swing.JPanel implements ComponentListener
         panel.setLayout(panelLayout);
         panelLayout.setHorizontalGroup(
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(consoleButton, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
-            .addComponent(embeddConsole, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+            .addComponent(consoleButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(embeddConsole, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelLayout.setVerticalGroup(
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLayout.createSequentialGroup()
-                .addComponent(embeddConsole, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                .addComponent(embeddConsole, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(consoleButton))
         );

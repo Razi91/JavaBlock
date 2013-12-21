@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaBlocks scriptEngine="python">
+    <option fullConnectorValues="true" grid="false" pascal="false"/>
+    <flowchart name="Rysuj">
+        <canvas interval="0" posX="-130.5" posY="389.66663" zoom="4"/>
+        <input/>
+        <preArgument/>
+        <blocks>
+            <block id="1" name="Rysuj" returnType="0" type="START">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="253 253 253" posX="-4.6038094" posY="-731.0"/>
+                <content/>
+                <comment>Rysuj(k)</comment>
+                <connect ID="34" value=""/>
+                <argument>k</argument>
+            </block>
+            <block id="2" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="253 253 253" posX="-4.6038094" posY="-492.5"/>
+                <content>var lin=k*3-1;	var n=1;	var i=0;	var t=" ";	var n=0</content>
+                <comment/>
+                <connect ID="3" value=""/>
+            </block>
+            <block id="3" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-4.6038094" posY="-278.0"/>
+                <content>lin&gt;=0</content>
+                <comment/>
+                <connect ID="4" value="true"/>
+                <connect ID="16" value="false"/>
+            </block>
+            <block id="4" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="112.00002" posY="-278.0"/>
+                <content>i=0;	n++</content>
+                <comment/>
+                <connect ID="5" value=""/>
+            </block>
+            <block id="5" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="89 255 167" posX="215.00296" posY="-278.0"/>
+                <content>i&lt;35-k*3+lin</content>
+                <comment/>
+                <connect ID="6" value="true"/>
+                <connect ID="18" value="false"/>
+            </block>
+            <block id="6" type="IO">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="89 255 167" posX="350.83316" posY="-278.0"/>
+                <content>Write(" ");	;	</content>
+                <comment>" " </comment>
+                <connect ID="22" value=""/>
+                <io ioType="1" message=" " messageSuffix="" newLine="false" variable=""/>
+            </block>
+            <block id="7" type="JUMP">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="89 255 167" posX="215.00296" posY="-374.1667"/>
+                <content> </content>
+                <comment/>
+                <connect ID="5" value=""/>
+            </block>
+            <block id="8" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="136 136 255" posX="423.47952" posY="-3.5000196" textColor="242 249 255"/>
+                <content>i&gt;0 &amp;&amp; i&lt;n*2-2 &amp;&amp; lin&gt;0</content>
+                <comment/>
+                <connect ID="10" value="true"/>
+                <connect ID="24" value="false"/>
+            </block>
+            <block id="9" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="0 239 249" posX="423.47952" posY="-95.12499"/>
+                <content>t="#"</content>
+                <comment/>
+                <connect ID="8" value=""/>
+            </block>
+            <block id="10" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="136 136 255" posX="622.3956" posY="-3.5000196" textColor="242 249 255"/>
+                <content>t=" "</content>
+                <comment/>
+                <connect ID="25" value=""/>
+            </block>
+            <block id="11" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 136 136" posX="423.47952" posY="154.66666"/>
+                <content>rand(0,99)&lt;=15</content>
+                <comment/>
+                <connect ID="12" value="true"/>
+                <connect ID="14" value="false"/>
+            </block>
+            <block id="12" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 136 136" posX="677.3956" posY="154.66666"/>
+                <content>t="o"</content>
+                <comment/>
+                <connect ID="13" value=""/>
+            </block>
+            <block id="13" type="JUMP">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 136 136" posX="677.3956" posY="239.0"/>
+                <content> </content>
+                <comment/>
+                <connect ID="14" value=""/>
+            </block>
+            <block id="14" type="JUMP">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 136 136" posX="423.47952" posY="239.0"/>
+                <content> </content>
+                <comment/>
+                <connect ID="15" value=""/>
+            </block>
+            <block id="15" type="IO">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="0 239 249" posX="423.47952" posY="282.33328"/>
+                <content>Write("" + (getValueOf(t)));	;	</content>
+                <comment>t</comment>
+                <connect ID="17" value=""/>
+                <io ioType="1" message="" messageSuffix="" newLine="false" variable="t"/>
+            </block>
+            <block id="16" type="RETURN">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="253 253 253" posX="-151.6667" posY="-278.0"/>
+                <content/>
+                <comment>End</comment>
+            </block>
+            <block id="17" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="0 239 249" posX="423.47952" posY="331.2501"/>
+                <content>i++</content>
+                <comment/>
+                <connect ID="20" value=""/>
+            </block>
+            <block id="18" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="215.00296" posY="-181.99997"/>
+                <content>i=0;	</content>
+                <comment/>
+                <connect ID="19" value=""/>
+            </block>
+            <block id="19" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="0 239 249" posX="215.00296" posY="-95.12499"/>
+                <content>i&lt;n*2-1</content>
+                <comment/>
+                <connect ID="9" value="true"/>
+                <connect ID="21" value="false"/>
+            </block>
+            <block id="20" type="JUMP">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="0 239 249" posX="215.00296" posY="331.25006"/>
+                <content> </content>
+                <comment/>
+                <connect ID="19" value=""/>
+            </block>
+            <block id="21" type="IO">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="255 255 0" posX="55.999996" posY="-95.12499"/>
+                <content>Writeln(" ");	;	</content>
+                <comment>" " </comment>
+                <connect ID="23" value=""/>
+                <io ioType="1" message=" " messageSuffix="" newLine="true" variable=""/>
+            </block>
+            <block id="22" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="89 255 167" posX="350.83316" posY="-374.1667"/>
+                <content>i++</content>
+                <comment/>
+                <connect ID="7" value=""/>
+            </block>
+            <block id="23" type="JUMP">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-4.6038094" posY="-95.12499"/>
+                <content> </content>
+                <comment/>
+                <connect ID="33" value=""/>
+            </block>
+            <block id="24" type="JUMP">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="136 136 255" posX="423.47952" posY="76.33333"/>
+                <content> </content>
+                <comment/>
+                <connect ID="11" value=""/>
+            </block>
+            <block id="25" type="JUMP">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="136 136 255" posX="622.3956" posY="76.33333"/>
+                <content> </content>
+                <comment/>
+                <connect ID="24" value=""/>
+            </block>
+            <block id="26" type="COMMENT">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="89 255 167" posX="276.50003" posY="-335.50006"/>
+                <content>wyrównanie;	    do;	  środka</content>
+                <comment/>
+            </block>
+            <block id="27" type="COMMENT">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="0 239 249" posX="278.66635" posY="157.00006"/>
+                <content>Rysowanie ;	 treści;	 choinki</content>
+                <comment/>
+            </block>
+            <block id="28" type="COMMENT">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="136 136 255" posX="545.66675" posY="42.999996" textColor="242 249 255"/>
+                <content>jeśli wnętrze,;	wypełnij spacją</content>
+                <comment/>
+            </block>
+            <block id="29" type="COMMENT">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 136 136" posX="557.0" posY="200.3333"/>
+                <content>Jeśli wypadnie losowanie,;	rysuj bombkę</content>
+                <comment/>
+            </block>
+            <block id="30" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-4.6038094" posY="-606.5"/>
+                <content>k&gt;1</content>
+                <comment/>
+                <connect ID="31" value="true"/>
+                <connect ID="2" value="false"/>
+            </block>
+            <block id="31" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="116.83333" posY="-606.5"/>
+                <content>Rysuj(k-1)</content>
+                <comment/>
+                <connect ID="32" value=""/>
+            </block>
+            <block id="32" type="JUMP">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="116.83333" posY="-492.5"/>
+                <content> </content>
+                <comment/>
+                <connect ID="2" value=""/>
+            </block>
+            <block id="33" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-4.6038094" posY="-178.0"/>
+                <content>lin--</content>
+                <comment/>
+                <connect ID="3" value=""/>
+            </block>
+            <block id="34" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-4.6038094" posY="-666.0"/>
+                <content>#^p k=int(k)</content>
+                <comment/>
+                <connect ID="30" value=""/>
+            </block>
+        </blocks>
+        <groups>
+            <group id="35" type="GROUP">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual borderColor="0 0 0" color="255 255 0" posX="0.0" posY="0.0" textColor="0 0 0"/>
+                <content/>
+                <comment/>
+                <block ID="29"/>
+                <block ID="28"/>
+                <block ID="27"/>
+                <block ID="26"/>
+                <block ID="25"/>
+                <block ID="24"/>
+                <block ID="23"/>
+                <block ID="22"/>
+                <block ID="21"/>
+                <block ID="20"/>
+                <block ID="19"/>
+                <block ID="18"/>
+                <block ID="17"/>
+                <block ID="15"/>
+                <block ID="14"/>
+                <block ID="13"/>
+                <block ID="12"/>
+                <block ID="11"/>
+                <block ID="10"/>
+                <block ID="9"/>
+                <block ID="8"/>
+                <block ID="7"/>
+                <block ID="6"/>
+                <block ID="5"/>
+                <block ID="4"/>
+                <block ID="3"/>
+            </group>
+            <group id="36" type="GROUP">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual borderColor="0 0 0" color="89 255 167" posX="0.0" posY="0.0" textColor="0 0 0"/>
+                <content/>
+                <comment/>
+                <block ID="26"/>
+                <block ID="22"/>
+                <block ID="7"/>
+                <block ID="6"/>
+                <block ID="5"/>
+            </group>
+            <group id="37" type="GROUP">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual borderColor="0 0 0" color="0 239 249" posX="0.0" posY="0.0" textColor="0 0 0"/>
+                <content/>
+                <comment/>
+                <block ID="27"/>
+                <block ID="25"/>
+                <block ID="24"/>
+                <block ID="20"/>
+                <block ID="19"/>
+                <block ID="17"/>
+                <block ID="15"/>
+                <block ID="14"/>
+                <block ID="13"/>
+                <block ID="12"/>
+                <block ID="11"/>
+                <block ID="10"/>
+                <block ID="9"/>
+                <block ID="8"/>
+            </group>
+            <group id="38" type="GROUP">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual borderColor="0 0 0" color="136 136 255" posX="0.0" posY="0.0" textColor="0 0 0"/>
+                <content/>
+                <comment/>
+                <block ID="28"/>
+                <block ID="25"/>
+                <block ID="24"/>
+                <block ID="10"/>
+                <block ID="8"/>
+            </group>
+            <group id="39" type="GROUP">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual borderColor="0 0 0" color="255 136 136" posX="0.0" posY="0.0" textColor="0 0 0"/>
+                <content/>
+                <comment/>
+                <block ID="29"/>
+                <block ID="14"/>
+                <block ID="13"/>
+                <block ID="12"/>
+                <block ID="11"/>
+            </group>
+        </groups>
+    </flowchart>
+</JavaBlocks>

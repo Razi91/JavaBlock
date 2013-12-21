@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaBlocks scriptEngine="python">
+    <option fullConnectorValues="true" grid="false" pascal="false"/>
+    <flowchart name="szukanie">
+        <canvas interval="200" posX="-95.5" posY="-89.0" zoom="4"/>
+        <input/>
+        <preArgument/>
+        <blocks>
+            <block id="1" name="Start" returnType="0" type="START">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="204 204 204" posX="-0.5714286" posY="-184.0"/>
+                <content>Start</content>
+                <comment>szukanie</comment>
+                <connect ID="3" value=""/>
+                <argument/>
+            </block>
+            <block id="2" type="RETURN">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="204 204 204" posX="-140.0" posY="78.0"/>
+                <content/>
+                <comment>End</comment>
+            </block>
+            <block id="3" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-0.5714286" posY="-111.0"/>
+                <content>ilosc=10;	OD=1;	DO=15</content>
+                <comment/>
+                <connect ID="4" value=""/>
+            </block>
+            <block id="4" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-0.5714286" posY="-43.0"/>
+                <content>var tab=new Array(ilosc)</content>
+                <comment/>
+                <connect ID="7" value=""/>
+            </block>
+            <block id="5" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="136 255 136" posX="-0.5714286" posY="78.0"/>
+                <content>i&lt;ilosc</content>
+                <comment/>
+                <connect ID="6" value="true"/>
+                <connect ID="2" value="false"/>
+            </block>
+            <block id="6" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="136 255 136" posX="159.33333" posY="78.0"/>
+                <content>r=rand(OD, DO);	j=0</content>
+                <comment/>
+                <connect ID="9" value=""/>
+            </block>
+            <block id="7" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-0.5714286" posY="20.0"/>
+                <content>i=0</content>
+                <comment/>
+                <connect ID="5" value=""/>
+            </block>
+            <block id="8" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="136 255 136" posX="-0.5714286" posY="215.0"/>
+                <content>tab[i]=r;	i++</content>
+                <comment/>
+                <connect ID="14" value=""/>
+            </block>
+            <block id="9" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="0 255 255" posX="159.33333" posY="215.0"/>
+                <content>j&lt;i</content>
+                <comment/>
+                <connect ID="8" value="false"/>
+                <connect ID="10" value="true"/>
+            </block>
+            <block id="10" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="0 255 255" posX="279.0" posY="215.0"/>
+                <content>tab[j]==r</content>
+                <comment/>
+                <connect ID="11" value="false"/>
+                <connect ID="12" value="true"/>
+            </block>
+            <block id="11" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="0 255 255" posX="279.0" posY="310.5"/>
+                <content>j++</content>
+                <comment/>
+                <connect ID="13" value=""/>
+            </block>
+            <block id="12" type="JUMP">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="279.0" posY="78.0"/>
+                <content> </content>
+                <comment/>
+                <connect ID="6" value=""/>
+            </block>
+            <block id="13" type="JUMP">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="159.33333" posY="310.5"/>
+                <content> </content>
+                <comment/>
+                <connect ID="9" value=""/>
+            </block>
+            <block id="14" type="IO">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="136 255 136" posX="-0.5714286" posY="146.0"/>
+                <content>Writeln("" + (getValueOf(tab[i-1]))+" ");	;	</content>
+                <comment>tab[i-1]+ " " </comment>
+                <connect ID="5" value=""/>
+                <io ioType="1" message="" messageSuffix=" " newLine="true" variable="tab[i-1]"/>
+            </block>
+        </blocks>
+        <groups/>
+    </flowchart>
+    <flowchart name="bufor">
+        <canvas interval="0" posX="-67.0" posY="-9.0" zoom="4"/>
+        <input/>
+        <preArgument/>
+        <blocks>
+            <block id="1" name="Start" returnType="0" type="START">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="204 204 204" posX="-100.0" posY="-335.0"/>
+                <content>Start</content>
+                <comment>bufor</comment>
+                <connect ID="3" value=""/>
+                <argument/>
+            </block>
+            <block id="2" type="RETURN">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="204 204 204" posX="-140.0" posY="83.0"/>
+                <content/>
+                <comment>end</comment>
+            </block>
+            <block id="3" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-100.0" posY="-254.0"/>
+                <content>ilosc=10;	OD=1;	DO=15</content>
+                <comment/>
+                <connect ID="4" value=""/>
+            </block>
+            <block id="4" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-100.0" posY="-166.0"/>
+                <content>var tab=new Array(ilosc);	var bufor=new Array(DO+1)</content>
+                <comment/>
+                <connect ID="5" value=""/>
+            </block>
+            <block id="5" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-100.0" posY="-60.0"/>
+                <content>i=0</content>
+                <comment/>
+                <connect ID="9" value=""/>
+            </block>
+            <block id="6" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="136 255 136" posX="-0.09523805" posY="83.0"/>
+                <content>i&lt;ilosc</content>
+                <comment/>
+                <connect ID="7" value="true"/>
+                <connect ID="2" value="false"/>
+            </block>
+            <block id="7" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="136 255 136" posX="159.0" posY="83.0"/>
+                <content>r=rand(OD, DO)</content>
+                <comment/>
+                <connect ID="11" value=""/>
+            </block>
+            <block id="8" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-0.09523805" posY="20.0"/>
+                <content>i=0</content>
+                <comment/>
+                <connect ID="6" value=""/>
+            </block>
+            <block id="9" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 159 60" posX="-0.09523805" posY="-60.0"/>
+                <content>i&lt;=DO</content>
+                <comment/>
+                <connect ID="10" value="true"/>
+                <connect ID="8" value="false"/>
+            </block>
+            <block id="10" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 159 60" posX="159.0" posY="-60.0"/>
+                <content>bufor[i]=false;	i++</content>
+                <comment/>
+                <connect ID="15" value=""/>
+            </block>
+            <block id="11" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="136 255 136" posX="159.0" posY="179.0"/>
+                <content>bufor[r]==false</content>
+                <comment/>
+                <connect ID="13" value="true"/>
+                <connect ID="17" value="false"/>
+            </block>
+            <block id="12" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="136 255 136" posX="-0.09523805" posY="270.0"/>
+                <content>tab[i]=r;	i++</content>
+                <comment/>
+                <connect ID="14" value=""/>
+            </block>
+            <block id="13" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="0 255 255" posX="159.0" posY="270.0"/>
+                <content>bufor[r]=true</content>
+                <comment/>
+                <connect ID="12" value=""/>
+            </block>
+            <block id="14" type="IO">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="136 255 136" posX="-0.09523805" posY="179.0"/>
+                <content>Writeln("" + (getValueOf(tab[i-1]))+" ");	;	</content>
+                <comment>tab[i-1]+ " " </comment>
+                <connect ID="6" value=""/>
+                <io ioType="1" message="" messageSuffix=" " newLine="true" variable="tab[i-1]"/>
+            </block>
+            <block id="15" type="JUMP">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="159.0" posY="-115.0"/>
+                <content> </content>
+                <comment/>
+                <connect ID="16" value=""/>
+            </block>
+            <block id="16" type="JUMP">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-0.09523805" posY="-115.0"/>
+                <content> </content>
+                <comment/>
+                <connect ID="9" value=""/>
+            </block>
+            <block id="17" type="JUMP">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="290.5" posY="179.0"/>
+                <content> </content>
+                <comment/>
+                <connect ID="18" value=""/>
+            </block>
+            <block id="18" type="JUMP">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="290.5" posY="83.0"/>
+                <content> </content>
+                <comment/>
+                <connect ID="7" value=""/>
+            </block>
+        </blocks>
+        <groups/>
+    </flowchart>
+</JavaBlocks>

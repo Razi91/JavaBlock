@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaBlocks>
+    <option fullConnectorValues="true" grid="false" pascal="false"/>
+    <flowchart name="main">
+        <canvas interval="0" posX="-113.75" posY="-19.5" zoom="5"/>
+        <input/>
+        <preArgument/>
+        <blocks>
+            <block id="1" name="Start" returnType="0" type="START">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="255 255 0" posX="0.3888889" posY="-322.0"/>
+                <content>Start</content>
+                <comment>main</comment>
+                <connect ID="3" value=""/>
+                <argument/>
+            </block>
+            <block id="2" type="RETURN">
+                <showComment/>
+                <options displayComment="true"/>
+                <visual color="255 255 0" posX="-200.0" posY="119.333336"/>
+                <content/>
+                <comment>End</comment>
+            </block>
+            <block id="3" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="0 255 255" posX="0.3888889" posY="-226.0"/>
+                <content>c2=addons.canvas2d(800,800);	c2.clearColor(0,0,0);	c2.autoUpdate=false;	c2.G.translate(400,400);	c2.G.scale(0.35,0.35);	c2.setAA(true)</content>
+                <comment/>
+                <connect ID="4" value=""/>
+            </block>
+            <block id="4" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="0 255 255" posX="0.3888889" posY="-115.0"/>
+                <content>x=800;	y=400;	i=0;	l=0</content>
+                <comment/>
+                <connect ID="7" value=""/>
+            </block>
+            <block id="5" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="141 255 144" posX="0.3888889" posY="119.333336"/>
+                <content>i&lt;1000000</content>
+                <comment/>
+                <connect ID="6" value="true"/>
+                <connect ID="11" value="false"/>
+            </block>
+            <block id="6" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="141 255 144" posX="329.66666" posY="119.333336"/>
+                <content>nx=sin(a*y) + c*cos(a*x);	ny=sin(b*x) + d*cos(b*y);	x=nx;	y=ny;	c2.setColor(abs(sin(x))*255, abs(sin(y))*255,abs(cos(x*y))*255);</content>
+                <comment/>
+                <connect ID="8" value=""/>
+            </block>
+            <block id="7" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="0 255 255" posX="0.3888889" posY="-2.3333333"/>
+                <content>a=1.5;	b=-1.8;	c=1.6;	d=0.9</content>
+                <comment/>
+                <connect ID="5" value=""/>
+            </block>
+            <block id="8" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="141 255 144" posX="329.66666" posY="242.22223"/>
+                <content>c2.drawPixel(x*400,y*400);	i+=1;	l+=1</content>
+                <comment/>
+                <connect ID="9" value=""/>
+            </block>
+            <block id="9" type="DECISION">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="141 255 144" posX="0.3888889" posY="242.22223"/>
+                <content>l==20000</content>
+                <comment/>
+                <connect ID="5" value="false"/>
+                <connect ID="10" value="true"/>
+            </block>
+            <block id="10" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="141 255 144" posX="-130.0" posY="242.22223"/>
+                <content>c2.update();	l=0</content>
+                <comment/>
+                <connect ID="9" value=""/>
+            </block>
+            <block id="11" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="141 255 144" posX="-100.0" posY="119.333336"/>
+                <content>c2.update()</content>
+                <comment/>
+                <connect ID="2" value=""/>
+            </block>
+            <block id="12" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="-85.0" posY="-2.3333333"/>
+                <content>a=-1.4;	b=1.6;	c=1;	d=0.7</content>
+                <comment/>
+                <connect ID="5" value=""/>
+            </block>
+            <block id="13" type="CPU">
+                <showComment/>
+                <options displayComment="false"/>
+                <visual color="255 255 0" posX="76.0" posY="-2.3333333"/>
+                <content>a=1.1;	b=-1.5;	c=0.3;	d=1.5</content>
+                <comment/>
+                <connect ID="5" value=""/>
+            </block>
+        </blocks>
+        <groups/>
+    </flowchart>
+</JavaBlocks>
