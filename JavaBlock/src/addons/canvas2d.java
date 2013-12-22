@@ -82,11 +82,14 @@ public class canvas2d extends JPanel {
         }
     };
     JCheckBoxMenuItem onTop;
+    
     final JMenuBar makeMenu(){
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("config/lang/lang");
         JMenuBar m=new JMenuBar();
         JMenuItem save=new JMenuItem();
-        save.setText("save");
-        save.setActionCommand("save");
+        //save.setText("save");
+        save.setText(bundle.getString("main.save"));
+        save.setActionCommand(bundle.getString("main.save"));
         save.addActionListener(menuAction);
         onTop=new JCheckBoxMenuItem();
         onTop.setText("Show on top");
