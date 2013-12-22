@@ -33,12 +33,12 @@ public class scriptEditor extends javax.swing.JPanel implements BlockEditor{
         jScrollPane2 = new javax.swing.JScrollPane();
         py = new javax.swing.JEditorPane();
 
-        jLabel1.setText("Name:");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("config/lang/addons"); // NOI18N
+        jLabel1.setText(bundle.getString("gui.name")); // NOI18N
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
 
-        js.setBackground(new java.awt.Color(255, 255, 255));
         js.setEditorKit(null);
         js.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
         jScrollPane1.setViewportView(js);
@@ -47,16 +47,15 @@ public class scriptEditor extends javax.swing.JPanel implements BlockEditor{
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("JavaScript", jPanel1);
 
-        py.setBackground(new java.awt.Color(255, 255, 255));
         py.setEditorKit(null);
         py.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
         jScrollPane2.setViewportView(py);
@@ -65,11 +64,11 @@ public class scriptEditor extends javax.swing.JPanel implements BlockEditor{
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+            .addComponent(jScrollPane2)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Python", jPanel2);
@@ -82,7 +81,7 @@ public class scriptEditor extends javax.swing.JPanel implements BlockEditor{
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

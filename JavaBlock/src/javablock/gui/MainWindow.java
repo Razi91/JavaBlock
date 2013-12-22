@@ -376,7 +376,7 @@ public final class MainWindow extends javax.swing.JFrame
         });
         jMenu1.add(menuNew);
 
-        newNS.setText("New NS");
+        newNS.setText(bundle.getString("main.newNS")); // NOI18N
         newNS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newNSActionPerformed(evt);
@@ -460,7 +460,7 @@ public final class MainWindow extends javax.swing.JFrame
         jMenu1.add(menuExportImage);
         menuExportImage.addActionListener(this);
 
-        menuSavePython.setText("Save python script");
+        menuSavePython.setText(bundle.getString("main.savePythonScript")); // NOI18N
         menuSavePython.setActionCommand("manage/savePython");
         jMenu1.add(menuSavePython);
         menuSavePython.addActionListener(this);
@@ -526,7 +526,7 @@ public final class MainWindow extends javax.swing.JFrame
         jMenu2.add(jSeparator12);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText(translator.get("main.edit.generator"));
+        jMenuItem3.setText(bundle.getString("main.edit.generator")); // NOI18N
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -606,7 +606,7 @@ public final class MainWindow extends javax.swing.JFrame
         });
         jMenu3.add(menuPascalMode);
 
-        jMenuItem1.setText("Fullscreen");
+        jMenuItem1.setText(bundle.getString("main.fullscreen")); // NOI18N
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -637,7 +637,7 @@ public final class MainWindow extends javax.swing.JFrame
         menuHelp.addActionListener(Manager);
 
         wikiHelp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/16/help-contents.png"))); // NOI18N
-        wikiHelp.setText("Wiki help");
+        wikiHelp.setText(bundle.getString("main.wikiHelp")); // NOI18N
         wikiHelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 wikiHelpActionPerformed(evt);
@@ -645,7 +645,7 @@ public final class MainWindow extends javax.swing.JFrame
         });
         jMenu4.add(wikiHelp);
 
-        menuManual.setText("Manual (PL)");
+        menuManual.setText(bundle.getString("main.manual")); // NOI18N
         menuManual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuManualActionPerformed(evt);
@@ -653,7 +653,7 @@ public final class MainWindow extends javax.swing.JFrame
         });
         jMenu4.add(menuManual);
 
-        comment.setText("Comment");
+        comment.setText(bundle.getString("main.comment")); // NOI18N
         comment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 commentActionPerformed(evt);
@@ -661,7 +661,7 @@ public final class MainWindow extends javax.swing.JFrame
         });
         jMenu4.add(comment);
 
-        menuInstall.setText("Install");
+        menuInstall.setText(bundle.getString("main.install")); // NOI18N
         menuInstall.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuInstallActionPerformed(evt);
@@ -669,7 +669,7 @@ public final class MainWindow extends javax.swing.JFrame
         });
         jMenu4.add(menuInstall);
 
-        jMenuItem12.setText("About");
+        jMenuItem12.setText(bundle.getString("main.about")); // NOI18N
         jMenuItem12.setEnabled(false);
         jMenu4.add(jMenuItem12);
 

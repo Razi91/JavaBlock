@@ -269,13 +269,13 @@ public class logoEditor extends javax.swing.JPanel implements BlockEditor {
 
         tipBox.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("gui.tooltip"))); // NOI18N
 
-        tips.setText("jLabel9");
+        tips.setText(bundle.getString("gui.tip")); // NOI18N
 
         javax.swing.GroupLayout tipBoxLayout = new javax.swing.GroupLayout(tipBox);
         tipBox.setLayout(tipBoxLayout);
         tipBoxLayout.setHorizontalGroup(
             tipBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tips, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
+            .addComponent(tips, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
         );
         tipBoxLayout.setVerticalGroup(
             tipBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,8 +293,8 @@ public class logoEditor extends javax.swing.JPanel implements BlockEditor {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(logoObj, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
-                    .addComponent(command, javax.swing.GroupLayout.Alignment.TRAILING, 0, 155, Short.MAX_VALUE))
+                    .addComponent(logoObj, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                    .addComponent(command, javax.swing.GroupLayout.Alignment.TRAILING, 0, 156, Short.MAX_VALUE))
                 .addContainerGap())
             .addComponent(tipBox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(editor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)

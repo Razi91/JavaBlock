@@ -27,15 +27,16 @@ public class About extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("JavaBlock 0.6.1");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("config/lang/lang"); // NOI18N
+        jLabel1.setText(bundle.getString("about.javaBlock")); // NOI18N
 
-        jLabel2.setText("JavaBlock is freeware software to creating and simulating flowcharts");
+        jLabel2.setText(bundle.getString("about.about")); // NOI18N
 
-        jLabel3.setText("Author: Jakub Konieczny (razi91@o2.pl)");
+        jLabel3.setText(bundle.getString("about.author")); // NOI18N
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Release notes"));
 
-        jTextPane1.setText(" * New behavior when inserting blocks (when a block was selected before adding block, it will be connected to new block)\n * Translations for popups\n * Shortcuts (CTRL+1/2/3/4/5/6 adds: CPU/IOin/IOout/DECISION/RETURN/COMMENT, SHIFT+1/2/3/4/5/6: IO/JUMP/LINK/CLIP/STRUCTURE/SCRIPT; like in left toolbar)\n * Using JLabel instead manual TextLayout to drawing text in canvas (allows to use HTML)\n * For loop generator\n * Switching blocks (selecting one, hold CTRL+SHIFT, click other)");
+        jTextPane1.setText(bundle.getString("about.notes")); // NOI18N
         jScrollPane1.setViewportView(jTextPane1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -49,32 +50,23 @@ public class About extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
         );
 
-        jLabel4.setText("codename: river");
+        jLabel4.setText(bundle.getString("about.codeName")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(414, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addContainerGap())
             .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 404, Short.MAX_VALUE)
+                        .addComponent(jLabel4))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(

@@ -458,7 +458,7 @@ public class Interpreter extends javax.swing.JPanel implements ComponentListener
             }
         });
 
-        commandLabel.setText("Command:");
+        commandLabel.setText(bundle.getString("interpreter.command")); // NOI18N
 
         exeButton.setText("exe");
         exeButton.addActionListener(new java.awt.event.ActionListener() {
