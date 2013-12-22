@@ -61,6 +61,7 @@ public final class pastebin {
                 data += URLEncoder.encode("paste_name", "UTF-8") + "="
                      + URLEncoder.encode("JavaBlock", "UTF-8");
             }
+            //brak api w nazwach
             data += "&" + URLEncoder.encode("api_dev_key", "UTF-8") + "="
                  + URLEncoder.encode("464f791c879e77742a1b377a1a4a8a2d", "UTF-8");
             data += "&" + URLEncoder.encode("api_paste_code", "UTF-8") + "="
@@ -79,6 +80,7 @@ public final class pastebin {
             working=false;
         }
         final URLDownloader down=new URLDownloader(
+                //zly adres
                 //"http://javablock.sf.net/",
                 //"http://javablock.pastebin.com/api_public.php",
                 "http://pastebin.com/api/api_post.php",
