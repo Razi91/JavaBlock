@@ -61,24 +61,29 @@ public final class pastebin {
                 data += URLEncoder.encode("paste_name", "UTF-8") + "="
                      + URLEncoder.encode("JavaBlock", "UTF-8");
             }
-            data += "&" + URLEncoder.encode("api_dev_key ", "UTF-8") + "="
+            //brak api w nazwach
+            data += "&" + URLEncoder.encode("api_dev_key", "UTF-8") + "="
                  + URLEncoder.encode("464f791c879e77742a1b377a1a4a8a2d", "UTF-8");
-            data += "&" + URLEncoder.encode("paste_code", "UTF-8") + "="
+            data += "&" + URLEncoder.encode("api_paste_code", "UTF-8") + "="
                  + URLEncoder.encode(xml, "UTF-8");
-            data += "&" + URLEncoder.encode("paste_format", "UTF-8") + "="
+            data += "&" + URLEncoder.encode("api_paste_format", "UTF-8") + "="
                  + URLEncoder.encode("xml", "UTF-8");
-            data += "&" + URLEncoder.encode("paste_expire_date", "UTF-8") + "="
-                 + URLEncoder.encode(exposure.split(" ")[0], "UTF-8");
-            data += "&" + URLEncoder.encode("paste_email", "UTF-8") + "="
+            data += "&" + URLEncoder.encode("api_paste_expire_date", "UTF-8") + "=" 
+                 + URLEncoder.encode(expire.split(" ")[0], "UTF-8");
+            data += "&" + URLEncoder.encode("api_paste_email", "UTF-8") + "="
                  + URLEncoder.encode(email, "UTF-8");
-            data += "&" + URLEncoder.encode("paste_private", "UTF-8") + "="
+            data += "&" + URLEncoder.encode("api_paste_private", "UTF-8") + "="
                  + URLEncoder.encode((exposure.equals("Public") ? "0" : "1"), "UTF-8");
+            data += "&" + URLEncoder.encode("api_option", "UTF-8") + "=" 
+                + URLEncoder.encode("paste", "UTF-8");
         } catch (Exception e) {
             working=false;
         }
         final URLDownloader down=new URLDownloader(
+                //zly adres
                 //"http://javablock.sf.net/",
-                "http://javablock.pastebin.com/api_public.php",
+                //"http://javablock.pastebin.com/api_public.php",
+                "http://pastebin.com/api/api_post.php",
                 data,
                 "Exporting to pastebin");
         global.Window.setEnabled(false);
