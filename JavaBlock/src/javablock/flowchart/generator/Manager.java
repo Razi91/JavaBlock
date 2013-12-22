@@ -67,7 +67,8 @@ public class Manager extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         gen = new javax.swing.JComboBox();
 
-        jLabel1.setText("Generator:");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("config/lang/lang"); // NOI18N
+        jLabel1.setText(bundle.getString("manager.generator")); // NOI18N
 
         gen.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "For", "Switch" }));
 
@@ -78,7 +79,7 @@ public class Manager extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(gen, 0, 135, Short.MAX_VALUE))
+                .addComponent(gen, 0, 139, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

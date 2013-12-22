@@ -173,9 +173,9 @@ class For extends javax.swing.JPanel implements Generator{
         declare = new javax.swing.JCheckBox();
         jLabel3 = new javax.swing.JLabel();
 
-        jLabel1.setText(translator.get("generator.for.variable"));
-
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("config/lang/lang"); // NOI18N
+        jLabel1.setText(bundle.getString("generator.for.variable")); // NOI18N
+
         jLabel2.setText(bundle.getString("generator.for.initValue")); // NOI18N
 
         jLabel4.setText(bundle.getString("generator.for.comparsion")); // NOI18N
@@ -233,7 +233,7 @@ class For extends javax.swing.JPanel implements Generator{
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(initial, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))))
+                            .addComponent(initial, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(

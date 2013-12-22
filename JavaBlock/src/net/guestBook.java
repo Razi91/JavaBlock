@@ -35,13 +35,14 @@ public class guestBook extends javax.swing.JFrame {
         comment = new javax.swing.JTextArea();
         send = new javax.swing.JButton();
 
-        jLabel1.setText("Your name");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("config/lang/lang"); // NOI18N
+        jLabel1.setText(bundle.getString("guest.yourName")); // NOI18N
 
-        jLabel3.setText("Link (ex. mail)");
+        jLabel3.setText(bundle.getString("guest.link")); // NOI18N
 
-        jLabel4.setText("Rate");
+        jLabel4.setText(bundle.getString("guest.rate")); // NOI18N
 
-        jLabel5.setText("Comment:");
+        jLabel5.setText(bundle.getString("guest.comment")); // NOI18N
 
         rate.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "1", "2", "3", "4", "5" }));
 
@@ -50,7 +51,7 @@ public class guestBook extends javax.swing.JFrame {
         comment.setRows(5);
         jScrollPane1.setViewportView(comment);
 
-        send.setText("Send");
+        send.setText(bundle.getString("guest.send")); // NOI18N
         send.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sendActionPerformed(evt);

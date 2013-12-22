@@ -375,7 +375,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="commandLabel">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Command:"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+                          <ResourceString bundle="config/lang/lang.properties" key="interpreter.command" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JButton" name="exeButton">

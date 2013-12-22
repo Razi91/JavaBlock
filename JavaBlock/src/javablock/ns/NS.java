@@ -46,13 +46,14 @@ public class NS extends Sheet {
         jSplitPane1.setDividerLocation(200);
         jSplitPane1.setRightComponent(viewport);
 
-        jButton1.setText("Move up");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("config/lang/lang"); // NOI18N
+        jButton1.setText(bundle.getString("ns.moveUp")); // NOI18N
 
-        jButton2.setText("Add above");
+        jButton2.setText(bundle.getString("ns.addAbove")); // NOI18N
 
-        jButton3.setText("Add bellow");
+        jButton3.setText(bundle.getString("ns.addBelow")); // NOI18N
 
-        jButton4.setText("Move down");
+        jButton4.setText(bundle.getString("ns.moveDown")); // NOI18N
 
         javax.swing.GroupLayout editorLayout = new javax.swing.GroupLayout(editor);
         editor.setLayout(editorLayout);

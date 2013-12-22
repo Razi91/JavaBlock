@@ -273,10 +273,10 @@ public class canvas2dEditor extends javax.swing.JPanel implements BlockEditor {
 
         jLabel8.setText("x:");
 
-        jLabel12.setFont(new java.awt.Font("TeXGyreBonum", 1, 13));
+        jLabel12.setFont(new java.awt.Font("TeXGyreBonum", 1, 13)); // NOI18N
         jLabel12.setText("From:");
 
-        jLabel13.setFont(new java.awt.Font("TeXGyreBonum", 1, 13));
+        jLabel13.setFont(new java.awt.Font("TeXGyreBonum", 1, 13)); // NOI18N
         jLabel13.setText("To:");
 
         javax.swing.GroupLayout drawLineLayout = new javax.swing.GroupLayout(drawLine);
@@ -364,13 +364,13 @@ public class canvas2dEditor extends javax.swing.JPanel implements BlockEditor {
 
         tipBox.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("gui.tooltip"))); // NOI18N
 
-        tips.setText("jLabel9");
+        tips.setText(bundle.getString("gui.tip")); // NOI18N
 
         javax.swing.GroupLayout tipBoxLayout = new javax.swing.GroupLayout(tipBox);
         tipBox.setLayout(tipBoxLayout);
         tipBoxLayout.setHorizontalGroup(
             tipBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tips, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+            .addComponent(tips, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
         );
         tipBoxLayout.setVerticalGroup(
             tipBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -388,8 +388,8 @@ public class canvas2dEditor extends javax.swing.JPanel implements BlockEditor {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(command, 0, 144, Short.MAX_VALUE)
-                    .addComponent(objName, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
+                    .addComponent(command, 0, 145, Short.MAX_VALUE)
+                    .addComponent(objName, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE))
                 .addContainerGap())
             .addComponent(editor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
             .addComponent(tipBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
