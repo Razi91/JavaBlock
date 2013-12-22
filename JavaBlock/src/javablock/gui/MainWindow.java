@@ -606,7 +606,7 @@ public final class MainWindow extends javax.swing.JFrame
         });
         jMenu3.add(menuPascalMode);
 
-        jMenuItem1.setText("Fullscreen");
+        jMenuItem1.setText(bundle.getString("main.fullscreen"));
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
