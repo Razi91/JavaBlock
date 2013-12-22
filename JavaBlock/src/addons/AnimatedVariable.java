@@ -9,6 +9,7 @@ public class AnimatedVariable{
         timeStart=System.currentTimeMillis();
     }
     
+    //test
     protected float varOld=0, varNew=0;
     protected long timeStart, timeAnim=500;
     
