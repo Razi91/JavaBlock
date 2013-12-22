@@ -87,6 +87,9 @@ public abstract class Sheet extends JComponent{
     @Deprecated
     public abstract List<JBlock> getBlocks();
     
+    public void generateBlocks(){
+    }
+    
     public  abstract void copy();
     public  abstract void cut();
     public  abstract void paste();

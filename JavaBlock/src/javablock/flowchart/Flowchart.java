@@ -29,6 +29,7 @@ import javablock.flowchart.blocks.startBlock;
 import javax.imageio.ImageIO;
 import org.w3c.dom.*;
 import widgets.Resizer;
+import javax.xml.parsers.*;
 
 
 /**
@@ -1537,6 +1538,7 @@ public class Flowchart extends Sheet implements ActionListener, KeyListener,
         return b;
     }
     
+    @Override
     public void generateBlocks(){
         JBlock[] l=javablock.flowchart.generator.Manager.get(this);
         if(l!=null)
@@ -1749,17 +1751,78 @@ public class Flowchart extends Sheet implements ActionListener, KeyListener,
 
     @Override
     public void copy() {
-        //throw new UnsupportedOperationException("Not supported yet.");
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = factory.newDocumentBuilder();
+            Document doc = docBuilder.newDocument();
+            Element root = doc.createElement("copy");
+            doc.appendChild(root);
+            optimizeID();
+            for (JBlock b : getSelected()) {
+                if(b.type==JBlock.Type.START) continue;
+                Element bl=null;
+                {
+                    b.ID=-b.ID;
+                    for(connector con:b.connects){
+                        if(getSelected().contains(con.n))
+                            con.n.ID=-con.n.ID;
+                    }
+                    if(b.linkTo!=null)
+                        b.linkTo.ID=-b.linkTo.ID;
+                }
+                bl=b.makeXml(root, true, -1);
+                {
+                    if(b.linkTo!=null)
+                        b.linkTo.ID=-b.linkTo.ID;
+                    for(connector con:b.connects){
+                        if(getSelected().contains(con.n))
+                            con.n.ID=-con.n.ID;
+                    }
+                    b.ID=-b.ID;
+                }
+                root.appendChild(bl);
+            }
+            for (JBlock b : getSelected()) {
+                b.makeXml(root, true);
+            }
+            if(getSelected().size()>0)
+                this.manager.clipBoard=root;
+        } catch (ParserConfigurationException ex) {
+            Logger.getLogger(FlowchartManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     public void cut() {
-        //throw new UnsupportedOperationException("Not supported yet.");
+        copy();
+        for(JBlock b: getSelected()){
+            b.delete();
+        }
+        getSelected().clear();
     }
 
     @Override
     public void paste() {
-        //throw new UnsupportedOperationException("Not supported yet.");
+        if(manager.clipBoard==null) return ;
+        manager.keepHistory=false;
+        getSelected().clear();
+        NodeList blockList=manager.clipBoard.getElementsByTagName("block");
+        int l=getBlocks().size();
+        for(int i=0; i<blockList.getLength(); i++){
+            Element b=(Element)blockList.item(i);
+            JBlock n= JBlock.make(b.getAttribute("type"),
+                    (Flowchart)this);
+            n.loadXml(b, false);
+            blocks.add(n);
+            selectBlock(n);
+            movingSelected=true;
+        }
+        for(int i=0; i<blockList.getLength(); i++){
+            blocks.get(l++).loadXml((Element)blockList.item(i), true);
+        }
+        optimizeID();
+        manager.keepHistory=true;
+        manager.selectedBlock(this);
     }
 
     @Override

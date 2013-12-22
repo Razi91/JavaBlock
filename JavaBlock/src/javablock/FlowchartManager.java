@@ -263,88 +263,15 @@ public class FlowchartManager extends JPanel implements ActionListener{
         workspace.renameSheetName(flow.getName(), workspace.getActive());
     }
 
-    Element clipBoard=null;
+    public Element clipBoard=null;
     public void copy(){
         flow.copy();
-        /*
-        try {
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder docBuilder = factory.newDocumentBuilder();
-            Document doc = docBuilder.newDocument();
-            Element root = doc.createElement("copy");
-            doc.appendChild(root);
-            flow.optimizeID();
-            for (JBlock b : flow.getSelected()) {
-                if(b.type==JBlock.Type.START) continue;
-                Element bl=null;
-                {
-                    b.ID=-b.ID;
-                    for(connector con:b.connects){
-                        if(flow.getSelected().contains(con.n))
-                            con.n.ID=-con.n.ID;
-                    }
-                    if(b.linkTo!=null)
-                        b.linkTo.ID=-b.linkTo.ID;
-                }
-                bl=b.makeXml(root, true, -1);
-                {
-                    if(b.linkTo!=null)
-                        b.linkTo.ID=-b.linkTo.ID;
-                    for(connector con:b.connects){
-                        if(flow.getSelected().contains(con.n))
-                            con.n.ID=-con.n.ID;
-                    }
-                    b.ID=-b.ID;
-                }
-                root.appendChild(bl);
-            }
-            for (JBlock b : flow.getSelected()) {
-                b.makeXml(root, true);
-            }
-            if(flow.getSelected().size()>0)
-                clipBoard=root;
-            //System.out.println(
-            //        config.misc.DoctoString(doc)
-            //        );
-        } catch (ParserConfigurationException ex) {
-            Logger.getLogger(FlowchartManager.class.getName()).log(Level.SEVERE, null, ex);
-        }
-         */
     }
     public void cut(){
         flow.cut();
-        /*
-        copy();
-        for(JBlock b:flow.getSelected()){
-            b.delete();
-        }
-        flow.getSelected().clear();
-         */
     }
     public void paste(){
         flow.paste();
-        /*
-        if(clipBoard==null) return ;
-        keepHistory=false;
-        flow.getSelected().clear();
-        NodeList blockList=clipBoard.getElementsByTagName("block");
-        int l=flow.getBlocks().size();
-        for(int i=0; i<blockList.getLength(); i++){
-            Element b=(Element)blockList.item(i);
-            JBlock n= JBlock.make(b.getAttribute("type"),
-                    (Flowchart)flow);
-            n.loadXml(b, false);
-            flow.blocks.add(n);
-            flow.selectBlock(n);
-            flow.movingSelected=true;
-        }
-        for(int i=0; i<blockList.getLength(); i++){
-            flow.blocks.get(l++).loadXml((Element)blockList.item(i), true);
-        }
-        flow.optimizeID();
-        keepHistory=true;
-        selectedBlock(flow);
-         */
     }
 
     @Deprecated
@@ -369,7 +296,7 @@ public class FlowchartManager extends JPanel implements ActionListener{
         return n;
     }
 
-    boolean keepHistory=true;
+    public boolean keepHistory=true;
     public void historyAdd(){
         if(!keepHistory) return ;
         if(global.applet) return ;

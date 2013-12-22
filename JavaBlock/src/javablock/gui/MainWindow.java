@@ -864,7 +864,7 @@ Rectangle windowSize;
     }                                           
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-//        Manager.flow.generateBlocks();
+        Manager.flow.generateBlocks();
     }                                          
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -956,6 +956,7 @@ Rectangle windowSize;
         this.engine.setSelectedItem(men.scriptEngine);
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().contains("history"))
             if(this.getFocusOwner() instanceof javax.swing.text.JTextComponent)
