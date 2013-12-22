@@ -67,8 +67,8 @@ public final class pastebin {
                  + URLEncoder.encode(xml, "UTF-8");
             data += "&" + URLEncoder.encode("api_paste_format", "UTF-8") + "="
                  + URLEncoder.encode("xml", "UTF-8");
-            data += "&" + URLEncoder.encode("api_paste_expire_date", "UTF-8") + "="
-                 + URLEncoder.encode(exposure.split(" ")[0], "UTF-8");
+            data += "&" + URLEncoder.encode("api_paste_expire_date", "UTF-8") + "=" 
+                 + URLEncoder.encode(expire.split(" ")[0], "UTF-8");
             data += "&" + URLEncoder.encode("api_paste_email", "UTF-8") + "="
                  + URLEncoder.encode(email, "UTF-8");
             data += "&" + URLEncoder.encode("api_paste_private", "UTF-8") + "="
