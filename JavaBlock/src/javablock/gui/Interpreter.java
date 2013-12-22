@@ -67,7 +67,7 @@ public class Interpreter extends javax.swing.JPanel implements ComponentListener
         StepButton = global.Window.scriptStep;
         StopButton = global.Window.scriptStop;
         IntervalSpiner = global.Window.scriptInterval;
-        embeddConsole.add(controll, BorderLayout.WEST);
+        //embeddConsole.add(controll, BorderLayout.WEST);
     }
 
     private static String allScripts="";
